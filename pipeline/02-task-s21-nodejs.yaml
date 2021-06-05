@@ -35,16 +35,16 @@ spec:
           mountPath: /var/lib/containers
         - name: gensource
           mountPath: /gensource
-      # securityContext: 
-      #   privileged: true
+      securityContext:
+        privileged: true
     - name: push
       image: quay.io/buildah/stable
-      command: ['buildah', 'push', '--creds=$(params.user):$(params.pass)', '--tls-verify=false', '$(params.registry)/$(params.user)/$(params.image-name)', 'docker://$(params.registry)/$(params.user)/$(params.image-name)']
+      command: ['buildah', 'push', '--tls-verify=false', '$(params.registry)/$(params.user)/$(params.image-name)', 'docker://$(params.registry)/$(params.user)/$(params.image-name)']
+      securityContext:
+        privileged: true
       volumeMounts:
-        - name: varlibcontainers
-          mountPath: /var/lib/containers
-      # securityContext:
-      #   privileged: true
+        - mountPath: /var/lib/containers
+          name: varlibcontainers
   volumes:
     - name: varlibcontainers
       emptyDir: {}
