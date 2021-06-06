@@ -10,7 +10,7 @@ app.get(`/health`, (req, res) => {
 
 app.get(`/hello`, (req, res) => {
   console.log(`Greeting user!`);
-  res.send("Hello world!").status(200);
+  res.send("Hello new driver!").status(200);
 });
 
 app.get(`/hello/:user`, (req, res) => {
