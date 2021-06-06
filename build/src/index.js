@@ -16,7 +16,7 @@ app.get(`/hello`, (req, res) => {
 app.get(`/hello/:user`, (req, res) => {
   let user = req.params.user;
   console.log(`Greeting ${user}!`);
-  res.send("Hello ${user}!").status(200);
+  res.send(`Hello ${user}!`).status(200);
 });
 
 // app.get(`/add/:num1/:num2`, (req, res) => {
