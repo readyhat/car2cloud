@@ -24,7 +24,6 @@ describe("GET /hello - Generic greeting", () => {
 		.end((err, res) => {
 			should.not.exist(err);
 			res.status.should.equal(200);
-			// res.body.result.should.equal(Hell);
 			done();
 		});
 	});

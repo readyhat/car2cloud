@@ -13,6 +13,12 @@ app.get(`/hello`, (req, res) => {
   res.send("Hello world!").status(200);
 });
 
+app.get(`/hello/:user`, (req, res) => {
+  let user = parseString(req.params.user);
+  console.log(`Greeting ${user}!`);
+  res.send("Hello ${user}!").status(200);
+});
+
 // app.get(`/add/:num1/:num2`, (req, res) => {
 //   let num1 = parseInt(req.params.num1, 10);
 //   let num2 = parseInt(req.params.num2, 10);
