@@ -28,3 +28,16 @@ describe("GET /hello - Generic greeting", () => {
 		});
 	});
 });
+
+describe("GET /hello/:user - User specific greeting", () => {
+	it("should provide a user specific greeting", done => {
+		chai.request(server)
+		.get("/hello/:car2cloud")
+		.end((err, res) => {
+			should.not.exist(err);
+			res.status.should.equal(200);
+			res.body.result.should.equal("Hello car2cloud!");
+			done();
+		});
+	});
+});
