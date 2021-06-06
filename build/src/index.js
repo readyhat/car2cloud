@@ -14,7 +14,7 @@ app.get(`/hello`, (req, res) => {
 });
 
 app.get(`/hello/:user`, (req, res) => {
-  let user = parseString(req.params.user);
+  let user = req.params.user;
   console.log(`Greeting ${user}!`);
   res.send("Hello ${user}!").status(200);
 });
