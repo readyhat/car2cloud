@@ -17,14 +17,14 @@ describe("GET /health - check server health", () => {
 	});
 });
 
-describe("GET /add - Additions", () => {
-	it("should add two and two", done => {
+describe("GET /hello - Generic greeting", () => {
+	it("should provide a generic greeting", done => {
 		chai.request(server)
-		.get("/add/2/2")
+		.get("/hello")
 		.end((err, res) => {
 			should.not.exist(err);
 			res.status.should.equal(200);
-			res.body.result.should.equal(4);
+			// res.body.result.should.equal(Hell);
 			done();
 		});
 	});
