@@ -6,8 +6,8 @@ spec:
   params: 
     - name: user
       type: string
-    - name: pass
-      type: string
+    # - name: pass
+    #   type: string
     - name: image-name
       type: string
     - name: registry
@@ -21,7 +21,7 @@ spec:
   steps:
     - name: generate
       image: quay.io/openshift-pipeline/s2i
-      workingDir: /workspace/repo/app
+      workingDir: /workspace/repo/build/src
       command: ["s2i", "build", ".", "registry.access.redhat.com/ubi8/nodejs-12", "--as-dockerfile", "/gensource/Dockerfile.gen"]
       volumeMounts:
         - name: gensource

@@ -6,7 +6,7 @@ spec:
   params:
     - name: pathContext
       description: Path to application inside git
-      default: "src"
+      default: "."
       type: string
     - name: action
       description: Operation to be performed by npm
